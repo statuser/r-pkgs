@@ -289,7 +289,7 @@ As you develop your package, you will be executing R code. This will be a mix of
 
 If you're totally new to package development, you don't have much basis for supporting or resisting this proposal. But those with some experience may find it somewhat upsetting. How are we supposed to express paths when working in subdirectories, like `tests/`? As it becomes relevant, we'll show you how to exploit path-building helpers, such as `testthat::test_path()`, that determine paths at execution time.
 
-The basic idea is that by leaving working directory alone, you are encouraged to write paths that convey intent explicitly ("read `foo.csv` from the test directory") instead of implicitly ("read `foo.csv` from current working directory, which I *think* is going to be the test directory"). A sure sign of reliance on implicit paths is incessant fiddling with your working directory, because you're using `setwd()` to manually fulfill the assumptions that are implicit in your paths.
+The basic idea is that by leaving the working directory alone, you are encouraged to write paths that convey intent explicitly ("read `foo.csv` from the test directory") instead of implicitly ("read `foo.csv` from current working directory, which I *think* is going to be the test directory"). A sure sign of reliance on implicit paths is incessant fiddling with your working directory, because you're using `setwd()` to manually fulfill the assumptions that are implicit in your paths.
 
 This mentality can design away a whole class of path headaches and makes day-to-day development more pleasant as well. There are two reasons why implicit paths are hard to get right:
 
